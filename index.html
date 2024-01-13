@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <title>Plant Guide</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="script.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    function predictPlant() {
+      console.log('predicting plant')
+      $('#plant-form')
+        .submit(function (e) {
+          $.ajax({
+            url: 'https://plantsmlactual.penelopelarkin2.repl.co/predict',
+            type: 'POST',
+            data: new FormData(this),
+            processData: false,
+            contentType: false,
+            success: function (data) {
+              console.log('succeeded!');
+              console.log(data);
+              if (data.result === "wilted") {
+                showUnhealthy();
+                showUnhealthy();
+              }
+              else {
+                showHealthy();
+                showHealthy();
+              }
+
+              return data;
+            },
+          });
+          e.preventDefault();
+        });
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <div class="header">
+  </header>
+  <h1> Welcome to Plant Guide!</h1>
+  <p> Sometimes, we just can't tell if our plant is happy or not. Depending on the species and
+    environment, every plant has different needs. Use Plant Guide to upload a photo of your houseplant and our machine
+    learning model will determine if
+    it needs a little extra care. </p>
+
+  <div class="center">
+  <div class="form-input">
+
+
+  </div>
+</div> 
+  <form id="plant-form" action="javascript:predictPlant()">
+    Select image and double click to upload:
+    <input type="file" name="image" id="image">
+    <input type="submit" value="Upload Image" name="submit">
+  </form>
+  <section class="ctaaa">
+    <button onclick="showUnhealthy()" class="hero-btnn">If Unhealthy</button>
+    <i class="fas fa-sort-plant-wilt"></i>
+  </section>
+  <div id="Unhealthy Plant">
+    Oh no! This plant is not healthy! <br>
+    Click the option that best describes your plant. <br>
+
+    <details>
+      <summary>The leaf tips are brown and yellowing, and there is water around its base.</summary>
+      <ol>
+        <li>Your plant may be overwatered! Try watering it a little less often.</li>
+        <li>Your plant may be experiencing “fertilizer burn”. If you’ve been using fertilizer, try using a little less,
+          a little less often.</li>
+      </ol>
+    </details>
+
+    <details>
+      <summary>The leaves are drooping and the soil is dry all the way through.</summary>
+      <ol>
+        <li>Your plant may need water! Try watering it more often. </li>
+        <li>Your plant may also need fertilizer. Check out <a
+            href="https://www.bhg.com/gardening/yard/garden-care/why-you-should-fertilize-plants/"> this</a> guide to
+          learn more about if your plant needs nitrogen, phosphorus, or potassium.</li>
+      </ol>
+    </details>
+  </div>
+  <br>
+
+  <section class="ctaa">
+    <button onclick="showHealthy()" class="hero-btnnn">If Healthy</button>
+    <div id="Healthy Plant">
+      This plant looks healthy! You are a great plant parent 🙂 <br>
+      If you still want to give your plant some extra love, learn more about its needs using another plant care source
+      like <a href="https://www.houseplantsexpert.com/"> House Plants Expert</a>.
+    </div>
+  </section>
+
+  <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script>
+</body>
+<section class="cta">
+  <a href="mailto:tmunguu@haverford.edu, bridgetteschaad@gmail.com, loafofbreadxc@gmail.com, penelope.a.larkin@gmail.com"
+    class="hero-btn"> CONTACT US ☺️ </a>
+</section>
+
+</html>

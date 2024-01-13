@@ -1,0 +1,110 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #e5f6fa;
+  line-height: 28px;
+}
+. {
+  display: none
+}
+.cta {
+    margin: 10px auto;
+  margin-top: 180px;
+    font-size: 14px;
+    color: #000000;
+}
+
+.ctaa{
+  margin-top:10px;
+}
+
+.ctaaa{
+  margin-top:20px;
+}
+div {
+  display: none;
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
+    border: 1px solid #a8c6fe;
+    padding: 5px 15px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btn:hover{
+    border: 1px solid #cce8b5;
+    background: #d4e3fe;
+    transition: 1s;
+}
+.hero-btnn{
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
+    border: 1px solid #e0edd4;
+    //border-radius: 50%;
+    padding: 8px 20px;
+    font-size: 13px;
+    background: #ffc4ab;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btnn:hover{
+    border: 1px solid #cce8b5;
+    background: #cce8b5;
+   
+    transition: 1s;
+}
+
+.hero-btnnn{
+    display: inline-block;
+    text-decoration: none;
+    color: #000000;
+    border: 1px solid #b1dd8c;
+    padding: 8px 20px;
+    border-right: 8px;
+    font-size: 13px;
+    background: #cce8b5;
+    position: relative;
+    cursor: pointer;
+}
+
+.hero-btnnn:hover{
+    border: 1px solid #e0edd4;
+    background: #b1dd8c;
+    transition: 1s;
+}
+
+.header {
+  width:1450px;
+  height:150px;
+  display:block;
+  background-image:url(https://static.vecteezy.com/system/resources/thumbnails/002/181/882/small/set-of-cute-indoor-plants-in-pots-hand-drawing-botanical-set-a-lot-of-flowerpots-cactus-tulips-flowers-sprouts-line-drawing-vector.jpg);
+}
+
+input::file-selector-button {
+    font-weight: bold;
+    color: black;
+    padding: 0.5em;
+    border: #583400;
+    border-radius: 3px;
+    background: #a78879;
+}
+
+input {
+  font-weight: bold;
+    color: black;
+    padding: 0.5em;
+    border: #a78879;
+    border-radius: 3px;
+    background: #a78879;
+}
+
+input:hover{
+   border: 1px solid #828b79;
+    background: #7d9274;
+    transition: 1s;
+}
